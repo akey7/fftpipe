@@ -2,6 +2,7 @@
 
 export("%>%")
 export(cos_sum)
+export(exp_decay)
 export(waveform)
 export(waveform_plot)
 importFrom(dplyr,mutate)
