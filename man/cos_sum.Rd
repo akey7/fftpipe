@@ -2,8 +2,7 @@
 % Please edit documentation in R/cos_sum.R
 \name{cos_sum}
 \alias{cos_sum}
-\title{cos_sum
-cos_sum() builds a waveform by summing cos() functions together. It mixes the results of the cos() sum with the incoming waveform by a summation. It obeys the sample rate and duration specified by the incoming waveform.}
+\title{cos_sum}
 \usage{
 cos_sum(incoming, freqs, amplitudes = NULL, phases = NULL)
 }
@@ -20,8 +19,7 @@ cos_sum(incoming, freqs, amplitudes = NULL, phases = NULL)
 Returns a data.frame in the format of the waveform() function describing the sum of the incoming waveform with the sum of the components specified by this function.
 }
 \description{
-cos_sum
-cos_sum() builds a waveform by summing cos() functions together. It mixes the results of the cos() sum with the incoming waveform by a summation. It obeys the sample rate and duration specified by the incoming waveform.
+Builds a waveform by summing cos() functions together. It mixes the results of the cos() sum with the incoming waveform by a summation. It obeys the sample rate and duration specified by the incoming waveform.
 }
 \examples{
 waveform(duration_s = 1.0, sr = 100) \%>\%

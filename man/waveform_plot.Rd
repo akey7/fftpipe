@@ -15,7 +15,7 @@ waveform_plot(incoming, ...)
 Returns a ggplot object that can be saved or displayed.
 }
 \description{
-waveform_plot()
+Plots a waveform with ggplot().
 }
 \examples{
 waveform() \%>\% cos_sum(1) \%>\% waveform_plot()

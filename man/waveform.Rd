@@ -2,8 +2,7 @@
 % Please edit documentation in R/waveform.R
 \name{waveform}
 \alias{waveform}
-\title{waveform
-Builds the skeleton of a waveform for a given duration and sample rate filled with zero values.}
+\title{waveform}
 \usage{
 waveform(duration_s = 1, sr = 200)
 }
@@ -16,7 +15,6 @@ waveform(duration_s = 1, sr = 200)
 Returns a data.frame with the following columns: .sample, the integer sample of the row; .sec, the double second of that row; and .value, the value for that row.
 }
 \description{
-waveform
 Builds the skeleton of a waveform for a given duration and sample rate filled with zero values.
 }
 \examples{

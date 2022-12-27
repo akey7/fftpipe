@@ -1,5 +1,7 @@
 #' waveform_plot()
 #'
+#' Plots a waveform with ggplot().
+#'
 #' @param incoming Required. A data.frame with the incoming waveform to plot.
 #' @param ... Optional. If specified, extra arguments are passed to the ggplot2 labs() function to place labels on the plot.
 #'

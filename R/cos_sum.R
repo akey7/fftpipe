@@ -1,5 +1,6 @@
 #' cos_sum
-#' cos_sum() builds a waveform by summing cos() functions together. It mixes the results of the cos() sum with the incoming waveform by a summation. It obeys the sample rate and duration specified by the incoming waveform.
+#'
+#' Builds a waveform by summing cos() functions together. It mixes the results of the cos() sum with the incoming waveform by a summation. It obeys the sample rate and duration specified by the incoming waveform.
 #'
 #' @param incoming Required. A data.frame of the incoming waveform.
 #' @param freqs Required. A double or vector of doubles specifying frequencies in Hz of component functions. If NULL, cos_sum() assumes amplitudes of 1.0 for all components. Defaults to NULL.
@@ -9,6 +10,7 @@
 #' @return Returns a data.frame in the format of the waveform() function describing the sum of the incoming waveform with the sum of the components specified by this function.
 #' @export
 #' @importFrom dplyr mutate
+#' @importFrom utils tail
 #'
 #' @examples
 #' waveform(duration_s = 1.0, sr = 100) %>%
