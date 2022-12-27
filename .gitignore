@@ -2,3 +2,10 @@
 .Rhistory
 .RData
 .Ruserdata
+
+# Other stuff
+.DS_Store
+*.csv
+*.html
+data/*.csv
+output/*.csv
