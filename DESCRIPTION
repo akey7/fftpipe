@@ -15,4 +15,5 @@ Config/testthat/edition: 3
 RoxygenNote: 7.2.3
 Config/testthat/parallel: true
 Imports: 
-    dplyr
+    dplyr,
+    ggplot2
