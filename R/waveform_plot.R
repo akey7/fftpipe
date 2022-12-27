@@ -1,5 +1,3 @@
-library(ggplot2)
-
 #' waveform_plot()
 #'
 #' @param incoming Required. A data.frame with the incoming waveform to plot.
@@ -7,13 +5,18 @@ library(ggplot2)
 #'
 #' @return Returns a ggplot object that can be saved or displayed.
 #' @export
+#' @importFrom ggplot2 ggplot
+#' @importFrom ggplot2 aes
+#' @importFrom ggplot2 geom_line
+#' @importFrom ggplot2 labs
+#' @importFrom utils tail
 #'
 #' @examples
 #' waveform() %>% cos_sum(1) %>% waveform_plot()
 waveform_plot <- function(incoming, ...) {
   stopifnot("incoming must be a dataframe of a waveform." = is.data.frame(incoming))
 
-  ggplot(incoming, aes(x = .sec, y = .value)) +
+  ggplot(incoming, aes(x = ".sec", y = ".value")) +
     geom_line() +
     labs(...)
 }

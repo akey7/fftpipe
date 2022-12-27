@@ -24,5 +24,6 @@ cos_sum
 cos_sum() builds a waveform by summing cos() functions together. It mixes the results of the cos() sum with the incoming waveform by a summation. It obeys the sample rate and duration specified by the incoming waveform.
 }
 \examples{
-waveform(duration_s = 1.0, sr = 100) \%>\% cos_sum(freqs = c(1.0, 3.0), amplitudes = NULL, phases = NULL)
+waveform(duration_s = 1.0, sr = 100) \%>\%
+  cos_sum(freqs = c(1.0, 3.0), amplitudes = NULL, phases = NULL)
 }

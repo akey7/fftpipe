@@ -16,4 +16,5 @@ RoxygenNote: 7.2.3
 Config/testthat/parallel: true
 Imports: 
     dplyr,
-    ggplot2
+    ggplot2,
+    magrittr

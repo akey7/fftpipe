@@ -10,7 +10,8 @@
 #' @export
 #'
 #' @examples
-#' waveform(duration_s = 1.0, sr = 100) %>% cos_sum(freqs = c(1.0, 3.0), amplitudes = NULL, phases = NULL)
+#' waveform(duration_s = 1.0, sr = 100) %>%
+#'   cos_sum(freqs = c(1.0, 3.0), amplitudes = NULL, phases = NULL)
 cos_sum <- function(incoming, freqs, amplitudes = NULL, phases = NULL) {
   stopifnot("incoming waveform must a data.frame." = is.data.frame(incoming))
   stopifnot("freqs must be a vector of doubles or a single double." = is.numeric(freqs))
