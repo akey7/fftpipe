@@ -39,5 +39,5 @@ cos_sum <- function(incoming, freqs, amplitudes = NULL, phases = NULL) {
     waveform_matrix[i + 1,] <- amplitude * cos((2 * pi * freq * incoming$.sample / sr) + phase)
   }
 
-  dplyr::mutate(incoming, .value = colSums(waveform_matrix))
+  dplyr::mutate(incoming, ".value" = colSums(waveform_matrix))
 }
