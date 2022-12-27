@@ -8,6 +8,7 @@
 #'
 #' @return Returns a data.frame in the format of the waveform() function describing the sum of the incoming waveform with the sum of the components specified by this function.
 #' @export
+#' @importFrom dplyr mutate
 #'
 #' @examples
 #' waveform(duration_s = 1.0, sr = 100) %>%
