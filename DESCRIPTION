@@ -6,7 +6,7 @@ Author: Alicia M. F. Key
 Maintainer: Alicia M. F. Key <amfkey@gmail.com>
 Description: fftpipe wraps dataframes, piping, and the tidyverse around base R's fft() function.
     fftpipe's style and interface are inspired by tidyverse and tidymodels. This package contains functions for generating, transforming, and plotting waveforms with operations around the fft() function.
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests: 
@@ -15,4 +15,6 @@ Config/testthat/edition: 3
 RoxygenNote: 7.2.3
 Config/testthat/parallel: true
 Imports: 
-    dplyr
+    dplyr,
+    ggplot2,
+    magrittr

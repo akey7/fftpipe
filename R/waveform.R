@@ -1,4 +1,5 @@
 #' waveform
+#'
 #' Builds the skeleton of a waveform for a given duration and sample rate filled with zero values.
 #'
 #' @param duration_s Waveform duration in seconds.
