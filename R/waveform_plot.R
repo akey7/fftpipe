@@ -1,3 +1,5 @@
+utils::globalVariables(c(".sec", ".value"))
+
 #' waveform_plot()
 #'
 #' Plots a waveform with ggplot().
@@ -18,7 +20,7 @@
 waveform_plot <- function(incoming, ...) {
   stopifnot("incoming must be a dataframe of a waveform." = is.data.frame(incoming))
 
-  ggplot(incoming, aes(x = ".sec", y = ".value")) +
+  ggplot(incoming, aes(x = .sec, y = .value)) +
     geom_line() +
     labs(...)
 }
