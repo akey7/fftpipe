@@ -19,7 +19,6 @@ compute_fft <- function(incoming) {
   .value <- stats::fft(incoming$.value)
   .psd <- Mod(.value) ^ 2
 
-
   data.frame(
     .idx = seq_along(.value),
     .value = .value,

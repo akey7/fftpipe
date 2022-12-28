@@ -17,7 +17,7 @@ test_that("compute_fft() computes an FFT of the sum of two cosines", {
     7.725425e-02-2.377641e-01i, 0.000000e+00+5.551115e-17i
   )
 
-  expect_equal(expected, actual, tolerance = 1e-3)
+  expect_equal(actual, expected, tolerance = 1e-3)
 })
 
 test_that("compute_fft() computes PSD from an FFT of the sum of two cosines", {
@@ -28,5 +28,5 @@ test_that("compute_fft() computes PSD from an FFT of the sum of two cosines", {
   actual <- compute_fft(wv)$.psd
   expected <- c(2.359264e-33, 6.933348e-33, 6.250000e-02, 2.500000e-01, 6.162976e-33, 7.703720e-33, 6.162976e-33, 2.500000e-01, 6.250000e-02, 3.081488e-33)
 
-  expect_equal(expected, actual, tolerance = 1e-3)
+  expect_equal(actual, expected, tolerance = 1e-3)
 })
