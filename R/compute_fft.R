@@ -17,9 +17,12 @@ compute_fft <- function(incoming) {
   stopifnot("incoming must be a data.frame with a waveform." = is.data.frame(incoming))
 
   .value <- stats::fft(incoming$.value)
+  .psd <- Mod(.value) ^ 2
+
 
   data.frame(
     .idx = seq_along(.value),
-    .value = .value
+    .value = .value,
+    .psd = .psd
   )
 }
