@@ -17,7 +17,7 @@ fft_plot(incoming, show = "everything", ...)
 ggplot() object of the FFT
 }
 \description{
-fft_plot()
+Plots the results of an FFT. It converts the x-axis scale to hz during the plotting.
 }
 \examples{
 waveform(duration_s = 1.0, sr = 10) \%>\%
