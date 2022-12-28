@@ -4,7 +4,7 @@
 \alias{fft_plot}
 \title{fft_plot()}
 \usage{
-fft_plot(incoming, show = "everything", ...)
+fft_plot(incoming, show = "half", ...)
 }
 \arguments{
 \item{incoming}{Required. A data.frame with the incoming waveform.}
