@@ -12,7 +12,7 @@ utils::globalVariables(c(".idx", ".value", ".mod", ".re", ".im", "component", "v
 #' @export
 #' @importFrom ggplot2 ggplot
 #' @importFrom ggplot2 aes
-#' @importFrom ggplot2 geom_line
+#' @importFrom ggplot2 geom_segment
 #' @importFrom ggplot2 labs
 #' @importFrom dplyr transmute
 #' @importFrom dplyr filter
@@ -30,7 +30,7 @@ utils::globalVariables(c(".idx", ".value", ".mod", ".re", ".im", "component", "v
 #'  length_norm() %>%
 #'  compute_fft() %>%
 #'  fft_plot(show = "half")
-fft_plot <- function(incoming, show = "everything", ...) {
+fft_plot <- function(incoming, show = "half", ...) {
   stopifnot("incoming must be a data.frame with an FFT." = is.data.frame(incoming))
   stopifnot("show argument must be \"everything\" or \"half\"." = show %in% c("half", "everything"))
 
@@ -44,15 +44,15 @@ fft_plot <- function(incoming, show = "everything", ...) {
     tidyr::pivot_longer(-hz, names_to = "component", values_to = "value")
 
   if (show == "everything") {
-    result <- ggplot2::ggplot(plot_data, aes(x = hz, y = value)) +
-      ggplot2::geom_point() +
+    result <- ggplot2::ggplot(plot_data, aes(x = hz, y = 0, xend = hz, yend = value)) +
+      ggplot2::geom_segment() +
       ggplot2::facet_wrap(~ component, nrow = 3)
   }
   else {
     result <- plot_data %>%
       dplyr::filter(component == ".mod", hz <= max(hz) / 2) %>%
-      ggplot2::ggplot(aes(x = hz, y = value)) +
-      ggplot2::geom_point()
+      ggplot2::ggplot(aes(x = hz, y = 0, xend = hz, yend = value)) +
+      ggplot2::geom_segment()
   }
 
   result +
