@@ -1,6 +1,8 @@
-utils::globalVariables(c(".idx", ".value", ".mod", ".re", ".im", "component", "value"))
+utils::globalVariables(c(".idx", ".value", ".mod", ".re", ".im", "component", "value", "hz"))
 
 #' fft_plot()
+#'
+#' Plots the results of an FFT. It converts the x-axis scale to hz during the plotting.
 #'
 #' @param incoming Required. A data.frame with the incoming waveform.
 #' @param show Optional. Either "half" (which shows the modulus of the FFT up to half of its values to display frequencies up to the Nyquist limit) or "everything" (which shows modulus, real, and imaginary components of all values.)
@@ -34,22 +36,22 @@ fft_plot <- function(incoming, show = "everything", ...) {
 
   plot_data <- incoming %>%
     dplyr::transmute(
-      .idx,
+       hz = .idx - 1,
       .re = Re(.value),
       .im = Im(.value),
       .mod = Mod(.value)
     ) %>%
-    tidyr::pivot_longer(-.idx, names_to = "component", values_to = "value")
+    tidyr::pivot_longer(-hz, names_to = "component", values_to = "value")
 
   if (show == "everything") {
-    result <- ggplot2::ggplot(plot_data, aes(x = .idx, y = value)) +
+    result <- ggplot2::ggplot(plot_data, aes(x = hz, y = value)) +
       ggplot2::geom_point() +
       ggplot2::facet_wrap(~ component, nrow = 3)
   }
   else {
     result <- plot_data %>%
-      dplyr::filter(component == ".mod", .idx <= max(incoming$.idx) / 2) %>%
-      ggplot2::ggplot(aes(x = .idx, y = value)) +
+      dplyr::filter(component == ".mod", hz <= max(hz) / 2) %>%
+      ggplot2::ggplot(aes(x = hz, y = value)) +
       ggplot2::geom_point()
   }
 
