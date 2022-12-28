@@ -4,12 +4,12 @@
 \alias{fft_plot}
 \title{fft_plot()}
 \usage{
-fft_plot(incoming, show = "half", ...)
+fft_plot(incoming, show = "psd", ...)
 }
 \arguments{
 \item{incoming}{Required. A data.frame with the incoming waveform.}
 
-\item{show}{Optional. Either "half" (which shows the modulus of the FFT up to half of its values to display frequencies up to the Nyquist limit) or "everything" (which shows modulus, real, and imaginary components of all values.)}
+\item{show}{Optional. Either "psd" (which shows the power spectral density of the FFT up to half of its values to display frequencies up to the Nyquist limit) or "everything" (which shows modulus, real, and imaginary components of all FFT values.)}
 
 \item{...}{Optional. If specified, passed to the ggplot2 labs() function.}
 }
@@ -30,5 +30,5 @@ waveform(duration_s = 1.0, sr = 10) \%>\%
  cos_sum(freqs = c(2.0, 3.0), amplitudes = c(0.5, 1.0)) \%>\%
  length_norm() \%>\%
  compute_fft() \%>\%
- fft_plot(show = "half")
+ fft_plot(show = "psd")
 }

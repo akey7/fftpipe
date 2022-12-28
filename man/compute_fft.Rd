@@ -10,7 +10,7 @@ compute_fft(incoming)
 \item{incoming}{data.frame containing the incoming waveform for the FFT.}
 }
 \value{
-A data.frame with the following columns: .values with the values from the FFT, and .idx with the indexes for these values (this makes it easier to plot with ggplot later).
+A data.frame with the following columns: .values with the values from the FFT, .idx with the indexes for these values (this makes it easier to plot with ggplot later). .psd contains the power spectral density of the fourier coefficient.
 }
 \description{
 Computes the FFT of the given waveform.
