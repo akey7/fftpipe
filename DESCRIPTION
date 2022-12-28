@@ -17,4 +17,5 @@ Config/testthat/parallel: true
 Imports: 
     dplyr,
     ggplot2,
-    magrittr
+    magrittr,
+    tidyr
