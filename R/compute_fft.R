@@ -4,7 +4,7 @@
 #'
 #' @param incoming data.frame containing the incoming waveform for the FFT.
 #'
-#' @return A data.frame with the following columns: .values with the values from the FFT, and .idx with the indexes for these values (this makes it easier to plot with ggplot later).
+#' @return A data.frame with the following columns: .values with the values from the FFT, .idx with the indexes for these values (this makes it easier to plot with ggplot later). .psd contains the power spectral density of the fourier coefficient.
 #' @export
 #' @importFrom stats fft
 #'
@@ -17,9 +17,11 @@ compute_fft <- function(incoming) {
   stopifnot("incoming must be a data.frame with a waveform." = is.data.frame(incoming))
 
   .value <- stats::fft(incoming$.value)
+  .psd <- Mod(.value) ^ 2
 
   data.frame(
     .idx = seq_along(.value),
-    .value = .value
+    .value = .value,
+    .psd = .psd
   )
 }
