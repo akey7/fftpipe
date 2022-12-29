@@ -3,6 +3,7 @@
 export("%>%")
 export(compute_fft)
 export(cos_sum)
+export(denoise_fft)
 export(exp_decay)
 export(fft_plot)
 export(inverse_fft)
