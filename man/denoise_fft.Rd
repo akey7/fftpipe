@@ -2,13 +2,29 @@
 % Please edit documentation in R/denoise_fft.R
 \name{denoise_fft}
 \alias{denoise_fft}
-\title{Title}
+\title{denoise_fft()}
 \usage{
-denoise_fft(incoming, psd_thresh)
+denoise_fft(incoming_fft, psd_thresh)
 }
 \arguments{
-\item{psd_thresh}{}
+\item{incoming_fft}{Required. The data.frame with an FFT to denoise.}
+
+\item{psd_thresh}{Required. The PSD threshold under which coefficients are dropped to zero as described above.}
+}
+\value{
+data.frame with a denoised FFT
 }
 \description{
-Title
+Applies a denoise algorithm to an FFT to uncover a signal from noise. It applies a threshold to the power spectral density (PSD) to distinguish signal from noise. Fourier coefficients that are below the PSD threshold are reduced to zeros, while coefficients that are above the PSD threshold are maintained.
+}
+\examples{
+wv <- waveform(duration_s = 1.0, sr = 100)
+wv_denoise <- wv \%>\%
+ cos_sum(1) \%>\%
+ white_noise(sd = 1e-5) \%>\%
+ length_norm() \%>\%
+ compute_fft() \%>\%
+ denoise_fft(psd_thresh = 0.1) \%>\%
+ inverse_fft(wv, .) \%>\%
+ length_norm()
 }

@@ -9,6 +9,15 @@
 #' @export
 #'
 #' @examples
+#' wv <- waveform(duration_s = 1.0, sr = 100)
+#' wv_denoise <- wv %>%
+#'  cos_sum(1) %>%
+#'  white_noise(sd = 1e-5) %>%
+#'  length_norm() %>%
+#'  compute_fft() %>%
+#'  denoise_fft(psd_thresh = 0.1) %>%
+#'  inverse_fft(wv, .) %>%
+#'  length_norm()
 denoise_fft <- function(incoming_fft, psd_thresh) {
   stopifnot("incoming_fft must be a data.frame that contains an FFT." = is.data.frame(incoming_fft))
 
