@@ -25,7 +25,7 @@ denoise_fft <- function(incoming_fft, psd_thresh) {
   new_value <- incoming_fft$.value
   mask <- incoming_fft$.psd < psd_thresh
   new_psd[mask] <- 0.0
-  new_value[mask] <- 0.0
+  new_value[mask] <- complex(real = 0.0, imaginary = 0.0)
 
   data.frame(
     .idx = incoming_fft$.idx,
