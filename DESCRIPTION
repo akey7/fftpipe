@@ -1,7 +1,7 @@
 Package: fftpipe
 Type: Package
 Title: A Pipeable Interface to Base R's fft() Function
-Version: 1.1.0
+Version: 1.1.2
 Author: Alicia M. F. Key
 Maintainer: Alicia M. F. Key <amfkey@gmail.com>
 Description: fftpipe wraps dataframes, piping, and the tidyverse around base R's fft() function.
