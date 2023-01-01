@@ -21,3 +21,6 @@ waveform(duration_s = 1.0, sr = 10) \%>\%
   length_norm() \%>\%
   compute_fft()
 }
+\references{
+Brunton, S. L. & Kutz, J. N. Data-Driven Science and Engineering: Machine Learning, Dynamical Systems, and Control. (Cambridge University Press, 2022). doi:10.1017/9781009089517. Pg 68.
+}
