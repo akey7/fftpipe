@@ -28,3 +28,6 @@ wv_denoise <- wv \%>\%
  inverse_fft(wv, .) \%>\%
  length_norm()
 }
+\references{
+Brunton, S. L. & Kutz, J. N. Data-Driven Science and Engineering: Machine Learning, Dynamical Systems, and Control. (Cambridge University Press, 2022). doi:10.1017/9781009089517. Pg 68.
+}
