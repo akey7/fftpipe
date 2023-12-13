@@ -50,7 +50,6 @@ rsconnect/
 
 # Markdown, HTML, and PDF
 *.md
-*.html
 
 # macOS junk
 .DS_Store
