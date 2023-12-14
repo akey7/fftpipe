@@ -3,7 +3,7 @@ title: "fftpipe Tutorial"
 description: |
   How to use the fftpipe package for R.
 author:
-  - name: Alicia M. F. Key 
+  - name: Alicia Key 
     url: https://scialicia.com
     affiliation: Personal Projects
     affiliation_url: https://scialicia.com
@@ -15,7 +15,7 @@ output: distill::distill_article
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## What is fftpipe?
+## What is `fftpipe`?
 
 `fftpipe` is a package of functions that wrap around the base R [`fft()`](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/fft) function. The `fftpipe` package enables workflows around the [`fft()`](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/fft) function that use the pipe (`%>%`) operator. I took inspiration for the interface to `fftpipe` from the [Tidyverse](https://www.tidyverse.org) and [tidymodels](https://www.tidymodels.org) packages.
 
